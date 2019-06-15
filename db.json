@@ -1,0 +1,84 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Sadiq",
+      "lastName": "Sambo",
+      "email": "sadiqasg@gmail.com",
+      "password": "superadmin",
+      "commodities": [
+        {
+          "id": 1,
+          "name": "Air Jordan",
+          "imageUrl": "",
+          "description": "Sneakers",
+          "category": "Wears"
+        },
+        {
+          "id": 2,
+          "name": "MacBook Pro",
+          "imageUrl": "",
+          "description": "core i9, 1TB SSD, 32GB RAM",
+          "category": "Gadgets"
+        }
+      ]
+    }
+  ],
+  "loggedInUser": [
+    {
+      "mail": "sadiqasg@gmail.com",
+      "id": 1
+    }
+  ],
+  "commodities": [
+    {
+      "id": 1,
+      "name": "commodity 1",
+      "imageUrl": "",
+      "description": "example ipsum",
+      "category": "household"
+    },
+    {
+      "id": 2,
+      "name": "commodity 2",
+      "imageUrl": "",
+      "description": "example ipsum",
+      "category": "gadgets"
+    },
+    {
+      "id": 3,
+      "name": "commodity 3",
+      "imageUrl": "",
+      "description": "example ipsum",
+      "category": "household"
+    },
+    {
+      "id": 4,
+      "name": "commodity 4",
+      "imageUrl": "",
+      "description": "example ipsum",
+      "category": "gadgets"
+    },
+    {
+      "name": "Commodity 5",
+      "imageUrl": "",
+      "description": "test commodity",
+      "category": "household",
+      "id": 5
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Gadgets"
+    },
+    {
+      "id": 2,
+      "name": "Household"
+    },
+    {
+      "id": 3,
+      "name": "Wears"
+    }
+  ]
+}

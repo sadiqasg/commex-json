@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Commex</title>
+    <!-- styles -->
+    <!-- <link
+      href="https://fonts.googleapis.com/css?family=Josefin+Sans"
+      rel="stylesheet"
+    /> -->
+    <link rel="stylesheet" href="./assets/bootstrap.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
+
+    <!-- scripts -->
+    <script src="./assets/jquery.js"></script>
+    <script src="./assets/bootstrap.min.js"></script>
+    <script src="./assets/main.js"></script>
+  </head>
+  <body>
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title col-12 text-center">Login as Admin</h4>
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <form>
+              <p
+                class="text-center bg-danger text-light"
+                id="error"
+                style="display:none"
+              >
+                Wrong admin credentials
+              </p>
+              <p
+                class="text-center bg-warning text-light"
+                id="missing"
+                style="display:none"
+              >
+                Fill the missing fields
+              </p>
+              <input
+                type="text"
+                class="form-control mb-3"
+                placeholder="Enter email"
+                id="usermail"
+              />
+              <input
+                type="password"
+                class="form-control mb-3"
+                placeholder="Password"
+                id="pwd"
+              />
+              <button
+                type="button"
+                class="btn btn-info btn-block"
+                id="loginBtn"
+              >
+                Login
+              </button>
+            </form>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="jumbotron text-center">
+      <div class="header-text">
+        <h2>CommeX</h2>
+        <p>
+          Turn your commodities into wealth
+        </p>
+      </div>
+    </header>
+
+    <main class="mb-5">
+      <div class="container">
+        <div class="row" style="height: 70vh">
+          <div class="col-md-6">
+            <!-- <img src="./img/meeting.png" alt="meeting" id="meeting-img" /> -->
+          </div>
+          <div class="col-md-6 mb-5">
+            <!-- <img
+              src="./img/attendance.jpg"
+              alt="attendance"
+              class="mt-3"
+              id="attend-img"
+            /> -->
+            <div class="text-center mt-3">
+              <h5>
+                Give out that item you no longer want for something you need!
+              </h5>
+              <p>Trade by barter.. with style</p>
+              <a
+                class="btn btn-info mb-5 text-light"
+                data-toggle="modal"
+                data-target="#myModal"
+                >Get Started</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>
+        &copy; 2019. Sadiq Sambo |
+        <a href="https://twitter.com/sas_excel" target="_blank">@sas_excel</a>
+      </p>
+    </footer>
+
+    <!-- <script>
+      function login() {
+        let uname = document.querySelector("#username").value;
+        let pwd = document.querySelector("#pwd").value;
+
+        if (!uname || !pwd) {
+          document.querySelector('#missing').style.display = "block";
+          setTimeout(function() {
+            document.querySelector('#missing').style.display = "none";
+          }, 2000)
+        } else if (uname === "sadiq" && pwd === "superadmin") {
+          window.location = "home.html";
+        } else {
+          document.querySelector('#error').style.display = "block";
+          setTimeout(function() {
+            document.querySelector('#error').style.display = "none";
+          }, 2000)
+        }
+      } ->
+    </script> -->
+  </body>
+</html>

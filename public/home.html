@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Commex</title>
+    <!-- styles -->
+    <!-- <link
+      href="https://fonts.googleapis.com/css?family=Josefin+Sans"
+      rel="stylesheet"
+    /> -->
+    <link rel="stylesheet" href="./assets/bootstrap.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
+
+    <!-- scripts -->
+    <script src="./assets/jquery.js"></script>
+    <script src="./assets/bootstrap.min.js"></script>
+    <script src="./assets/main.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <!-- <div class="mt-2">
+        <span id="tag" class="text-info">
+          <img src="/public/img/logo.jpg" class="pr-2" />Commex Trading
+          Hub</span
+        >
+        <span class="float-right text-secondary"
+          ><em>Signed in as User 1 [Admin]</em></span
+        >
+      </div> -->
+      <!-- <h5 class="text-right mt-2">Welcome, User 001</h5> -->
+      <hr />
+      <!-- Nav pills -->
+      <div class="jumbotron">
+        <ul class="nav nav-pills nav-justified" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#menu1"
+              >My Commodities</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#menu2">Messages</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div id="home" class="container tab-pane active">
+          <div class="text-center">
+            <h3>Featured Commodities</h3>
+            <em>
+              <span>Search By Category:</span>
+              <select id="categories" class="btn btn-dark"></select>
+            </em>
+            <hr />
+          </div>
+          <div class="row text-center" id="commodity-row"></div>
+        </div>
+        <div id="menu1" class="container tab-pane fade">
+          <br />
+          <h2>My Commodities</h2>
+          <div id="myCommodities"></div>
+        </div>
+        <div id="menu2" class="container tab-pane fade">
+          <br />
+          <p>
+            You've not started any conversation
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="jumbotron bg-secondary text-center">
+      <h3>Featured Commodities</h3>
+      <em>
+        <span class="text-light">Search By Category:</span>
+        <select id="categories" class="btn btn-light"></select>
+      </em>
+    </div>
+    <a href="./index.html">&larr;</a>
+    <div class="container-fluid">
+      <div class="text-right">
+        <a
+          class="btn btn-secondary text-light"
+          data-toggle="modal"
+          data-target="#commModal"
+          >+ New Commodity</a
+        >
+      </div>
+      <hr />
+      <div class="row text-center" id="commodity-row"></div> -->
+
+    <!-- contact section -->
+    <!-- <section class="chat-section">
+        <div class="c-window"></div>
+        <div class="c-input-area">
+          <form method="POST" action="">
+            <input type="text" placeholder="Enter message" />
+            <button id="c-btn" type="submit" class="btn btn-secondary"></button>
+          </form>
+        </div>
+      </section> -->
+    <!-- end contact section -->
+    <!-- </div> -->
+
+    <!-- The Modal -->
+    <div class="modal" id="commModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title col-12 text-center">Add Commodity</h4>
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <form>
+              <select class="form-control mb-2" id="categoriesOnAdd"></select>
+              <input
+                class="form-control mb-3"
+                type="text"
+                placeholder="Enter Name"
+                id="name"
+              />
+              <textarea
+                class="form-control mb-3"
+                placeholder="Enter description"
+                id="ta"
+              ></textarea>
+              <div class="custom-file mb-2">
+                <input
+                  type="file"
+                  accept="image/*"
+                  class="custom-file-input"
+                  id="customFileLangHTML"
+                />
+                <label class="custom-file-label" for="customFileLangHTML"
+                  >Upload image</label
+                >
+              </div>
+              <button type="button" class="btn btn-info btn-block" id="submit">
+                Submit
+              </button>
+            </form>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-dismiss="modal"
+              id="closeModal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

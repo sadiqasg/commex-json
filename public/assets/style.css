@@ -1,0 +1,43 @@
+header.jumbotron {
+  color: #fff;
+  background: linear-gradient(to right, #34e89e, #0f3443);
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #0f3443;
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+}
+.card {
+  box-shadow: #555 2px 2px 2px;
+}
+
+/*chat*/
+.chat-section {
+  margin: 0 auto;
+  display: none;
+  border: 1px solid #0f0f0f;
+  box-shadow: #0f3443 0 0 1px;
+}
+.chat-section .c-window {
+  padding: 0;
+  height: 50%;
+  width: inherit;
+  background: #000;
+  color: #fff;
+}
+.chat-section .c-input-area {
+  display: inline-block;
+  width: 100%;
+}
+
+#tag {
+  font-weight: bolder;
+  font-size: larger;
+  padding: 5px;
+  box-shadow: rgb(161, 148, 148) 1px 1px 2px;
+}
