@@ -35,13 +35,12 @@ $(function() {
       data: JSON.stringify(user),
       dataType: "json",
       contentType: "application/json",
-      success: data => {
-        console.log("success");
-      },
+      success: data => {},
       error: e => console.log("error", e)
     });
   };
 
+  // get categories to the dropdown
   let getCategoriesDropdown = () => {
     let options = "<option disabled selected>Categories</option>";
     $.ajax({
@@ -59,6 +58,7 @@ $(function() {
     });
   };
 
+  // get featured commodities
   let getCommodities = () => {
     $.ajax({
       type: "GET",
@@ -72,7 +72,7 @@ $(function() {
               <img src="${data[i].imageUrl}" alt="image" />
               <hr />
               <h4>${data[i].name}</h4>
-              <p>${data[i].description}</p>
+              <div class="details">${data[i].description}</div>
               <div class="m-3 shadow-lg">
                 <button class="btn btn-light" id='xbtn'>Contact</button>
               </div>
@@ -85,13 +85,14 @@ $(function() {
     });
   };
 
+  // get my commodities
   let getMyCommodities = () => {
     $.ajax({
       type: "GET",
       url: `${url}/loggedInUser`,
       contentType: "application/json",
       success: data => {
-        let {mail} = data[0];
+        let { mail } = data[0];
 
         // get loggedin user commodities
         $.ajax({
@@ -99,43 +100,62 @@ $(function() {
           url: `${url}/users?email=${mail}`,
           contentType: "application/json",
           success: data => {
-            let {commodities} = data[0];
-            let c = ''
+            $("#currentUser").html(data[0].firstName);
+            let { commodities } = data[0];
+            let c = "";
             for (let i = 0; i < commodities.length; i++) {
-              c += `<p>${commodities[i].name}</p>`
+              c += `<div class="col-md-3">
+              <div class="card m-3 p-1">
+                <img src="${commodities[i].imageUrl}" alt="image" />
+                <h3>${commodities[i].name}</h3>
+                <hr/>
+                <div class="details">${commodities[i].description}</div>
+                <div class="m-3 shadow-lg">
+                  <button class="btn btn-danger" id='xbtn'>delete</button>
+                </div>
+              </div>
+            </div>`;
             }
-            $('#myCommodities').append(c);
+            $("#myCommodities").append(c);
           },
-          error: e => console.log('error', e)
-        })
+          error: e => console.log("error", e)
+        });
       },
       error: e => console.log("error", e)
     });
   };
 
-  // submit to post commodities
+  // user add a commodity
   $("#submit").on("click", () => {
-    let nm = $("#name").val();
-    let txt = $("#ta").val();
+    let cat = $("#categoriesOnAdd").val();
+    let name = $("#name").val();
+    let desc = $("#desc").val();
 
-    if (!nm || !txt) return;
-
-    let data = {
-      name: nm,
-      imageUrl: "",
-      description: txt
+    let newCommodity = {
+      name: name,
+      description: desc,
+      category: cat
     };
 
+    // first get loggedin user
     $.ajax({
-      type: "post",
-      data: JSON.stringify(data),
-      url: `${url}/commodities`,
-      dataType: "json",
+      type: "GET",
+      url: `${url}/loggedInUser`,
       contentType: "application/json",
       success: data => {
-        console.log("record created", data);
-        $("#closeModal").click();
-        getCommodities();
+        let { mail } = data[0];
+
+        // then patch loggedin user commodities on success
+        $.ajax({
+          type: "PATCH",
+          url: `${url}/users?email=${mail}`,
+          contentType: "application/json",
+          data: JSON.stringify(newCommodity),
+          success: data => {
+            console.log('posting...', data)
+          },
+          error: e => console.log("error", e)
+        });
       },
       error: e => console.log("error", e)
     });

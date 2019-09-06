@@ -20,19 +20,18 @@
   </head>
   <body>
     <div class="container-fluid">
-      <!-- <div class="mt-2">
-        <span id="tag" class="text-info">
-          <img src="/public/img/logo.jpg" class="pr-2" />Commex Trading
-          Hub</span
-        >
-        <span class="float-right text-secondary"
-          ><em>Signed in as User 1 [Admin]</em></span
-        >
-      </div> -->
-      <!-- <h5 class="text-right mt-2">Welcome, User 001</h5> -->
+      <div class="mt-2">
+        <span id="tag" class="text-info">CTH</span>
+        <p class="text-right">
+          Welcome, <span id="currentUser"></span><br /><small
+            style="border-top:1px solid grey"
+            >log out</small
+          >
+        </p>
+      </div>
       <hr />
       <!-- Nav pills -->
-      <div class="jumbotron">
+      <div class="jumbotron bg-dark">
         <ul class="nav nav-pills nav-justified" role="tablist">
           <li class="nav-item">
             <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
@@ -63,8 +62,17 @@
         </div>
         <div id="menu1" class="container tab-pane fade">
           <br />
-          <h2>My Commodities</h2>
-          <div id="myCommodities"></div>
+          <div class="float-right">
+            <a
+              class="btn btn-secondary text-light"
+              data-toggle="modal"
+              data-target="#commModal"
+              >+ New Commodity</a
+            >
+          </div>
+          <h3 class="ml-3">My Commodities</h3>
+          <hr />
+          <div class="row text-center" id="myCommodities"></div>
         </div>
         <div id="menu2" class="container tab-pane fade">
           <br />
@@ -74,25 +82,6 @@
         </div>
       </div>
     </div>
-    <!-- <div class="jumbotron bg-secondary text-center">
-      <h3>Featured Commodities</h3>
-      <em>
-        <span class="text-light">Search By Category:</span>
-        <select id="categories" class="btn btn-light"></select>
-      </em>
-    </div>
-    <a href="./index.html">&larr;</a>
-    <div class="container-fluid">
-      <div class="text-right">
-        <a
-          class="btn btn-secondary text-light"
-          data-toggle="modal"
-          data-target="#commModal"
-          >+ New Commodity</a
-        >
-      </div>
-      <hr />
-      <div class="row text-center" id="commodity-row"></div> -->
 
     <!-- contact section -->
     <!-- <section class="chat-section">
@@ -132,7 +121,7 @@
               <textarea
                 class="form-control mb-3"
                 placeholder="Enter description"
-                id="ta"
+                id="desc"
               ></textarea>
               <div class="custom-file mb-2">
                 <input

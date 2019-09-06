@@ -15,7 +15,9 @@ header.jumbotron {
 .card {
   box-shadow: #555 2px 2px 2px;
 }
-
+.card .details {
+  height: 50px;
+}
 /*chat*/
 .chat-section {
   margin: 0 auto;

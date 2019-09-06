@@ -20,6 +20,13 @@
           "imageUrl": "",
           "description": "core i9, 1TB SSD, 32GB RAM",
           "category": "Gadgets"
+        },
+        {
+          "id": 3,
+          "name": "Hp spectre",
+          "imageUrl": "",
+          "description": "core i9, 1TB SSD, 32GB RAM",
+          "category": "Gadgets"
         }
       ]
     }
@@ -28,6 +35,10 @@
     {
       "mail": "sadiqasg@gmail.com",
       "id": 1
+    },
+    {
+      "mail": "sadiqasg@gmail.com",
+      "id": 2
     }
   ],
   "commodities": [
